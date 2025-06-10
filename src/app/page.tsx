@@ -35,7 +35,7 @@ export default function LandingPage() {
                 width={1000} 
                 height={500} 
                 className="rounded-lg shadow-2xl mx-auto"
-                data-ai-hint="dashboard interface"
+                data-ai-hint="app dashboard"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
             </div>
