@@ -21,7 +21,7 @@ export default function LandingPage() {
               işe alım uzmanlarından geri bildirim almalarına ve kariyer hedeflerine ulaşmalarına yardımcı olur.
             </p>
             <div className="space-x-4 animate-in fade-in zoom-in-95 duration-500 ease-out delay-400">
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="transition-all duration-300 ease-out hover:brightness-110 hover:-translate-y-0.5">
                 <Link href="/register">Hemen Başla</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
@@ -111,8 +111,12 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description, className }: FeatureCardProps) {
   return (
-    <div className={`bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ${className}`}>
-      <div className="flex justify-center mb-4">{icon}</div>
+    <div className={`group bg-card p-6 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out ${className}`}>
+      <div className="flex justify-center mb-4">
+        <div className="animate-float transition-transform duration-300 ease-out group-hover:scale-110">
+          {icon}
+        </div>
+      </div>
       <h3 className="text-xl font-semibold font-headline mb-2 text-primary">{title}</h3>
       <p className="text-foreground/70">{description}</p>
     </div>
