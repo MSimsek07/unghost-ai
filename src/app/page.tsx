@@ -11,7 +11,7 @@ export default function LandingPage() {
       <PublicNavbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-br from-primary/10 via-background to-background overflow-hidden">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary/10 via-background to-background overflow-hidden animate-gradient-hero">
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-6xl font-bold font-headline mb-6 text-primary">
               <span className="inline-block animate-in fade-in slide-in-from-bottom-12 duration-500 ease-out">
@@ -26,20 +26,20 @@ export default function LandingPage() {
               işe alım uzmanlarından geri bildirim almalarına ve kariyer hedeflerine ulaşmalarına yardımcı olur.
             </p>
             <div className="space-x-4 animate-in fade-in zoom-in-95 duration-500 ease-out delay-500">
-              <Button size="lg" asChild className="transition-all duration-300 ease-out hover:brightness-110 hover:-translate-y-0.5">
+              <Button size="lg" asChild className="transition-all duration-300 ease-out hover:brightness-110 hover:-translate-y-1 hover:shadow-xl">
                 <Link href="/register">Hemen Başla</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="transition-all duration-300 ease-out hover:border-accent hover:text-accent">
                 <Link href="#features">Özellikleri Keşfet</Link>
               </Button>
             </div>
-            <div className="mt-16 relative animate-in fade-in zoom-in-95 duration-700 ease-out delay-600">
+            <div className="mt-16 relative group animate-in fade-in zoom-in-95 duration-700 ease-out delay-600 overflow-hidden rounded-lg shadow-2xl">
                <Image 
                 src="https://placehold.co/1000x500.png" 
                 alt="Unghost AI Arayüzü" 
                 width={1000} 
                 height={500} 
-                className="rounded-lg shadow-2xl mx-auto"
+                className="mx-auto transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110"
                 data-ai-hint="application dashboard"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent animate-in fade-in duration-500 delay-700"></div>
