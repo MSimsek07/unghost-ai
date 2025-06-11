@@ -13,14 +13,19 @@ export default function LandingPage() {
         {/* Hero Section */}
         <section className="py-20 md:py-32 bg-gradient-to-br from-primary/10 via-background to-background overflow-hidden">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline mb-6 text-primary animate-in fade-in slide-in-from-bottom-12 duration-700 ease-out">
-              İş Arayışınızda <span className="text-accent">Yalnız Değilsiniz</span>
+            <h1 className="text-4xl md:text-6xl font-bold font-headline mb-6 text-primary">
+              <span className="inline-block animate-in fade-in slide-in-from-bottom-12 duration-500 ease-out">
+                İş Arayışınızda
+              </span>{' '}
+              <span className="inline-block text-accent animate-in fade-in slide-in-from-bottom-12 duration-500 ease-out delay-200">
+                Yalnız Değilsiniz
+              </span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out delay-200">
+            <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-500 ease-out delay-400">
               Unghost AI, Türkiye'deki teknoloji profesyonellerinin iş başvurularını etkin bir şekilde yönetmelerine,
               işe alım uzmanlarından geri bildirim almalarına ve kariyer hedeflerine ulaşmalarına yardımcı olur.
             </p>
-            <div className="space-x-4 animate-in fade-in zoom-in-95 duration-500 ease-out delay-400">
+            <div className="space-x-4 animate-in fade-in zoom-in-95 duration-500 ease-out delay-500">
               <Button size="lg" asChild className="transition-all duration-300 ease-out hover:brightness-110 hover:-translate-y-0.5">
                 <Link href="/register">Hemen Başla</Link>
               </Button>
@@ -28,7 +33,7 @@ export default function LandingPage() {
                 <Link href="#features">Özellikleri Keşfet</Link>
               </Button>
             </div>
-            <div className="mt-16 relative animate-in fade-in zoom-in-95 duration-700 ease-out delay-500">
+            <div className="mt-16 relative animate-in fade-in zoom-in-95 duration-700 ease-out delay-600">
                <Image 
                 src="https://placehold.co/1000x500.png" 
                 alt="Unghost AI Arayüzü" 
@@ -37,7 +42,7 @@ export default function LandingPage() {
                 className="rounded-lg shadow-2xl mx-auto"
                 data-ai-hint="application dashboard"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent animate-in fade-in duration-500 delay-700"></div>
             </div>
           </div>
         </section>
