@@ -13,7 +13,7 @@ export default function LandingPage() {
         {/* Hero Section */}
         <section className="py-20 md:py-32 bg-gradient-to-br from-primary/10 via-background to-background">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline mb-6 text-primary">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline mb-6 text-primary animate-in fade-in slide-in-from-bottom-12 duration-700 ease-out">
               İş Arayışınızda <span className="text-accent">Yalnız Değilsiniz</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-3xl mx-auto">
@@ -35,7 +35,7 @@ export default function LandingPage() {
                 width={1000} 
                 height={500} 
                 className="rounded-lg shadow-2xl mx-auto"
-                data-ai-hint="app dashboard"
+                data-ai-hint="application dashboard"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
             </div>
