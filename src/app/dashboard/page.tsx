@@ -24,10 +24,10 @@ import { useToast } from '@/hooks/use-toast';
 
 // Mock data - replace with API calls
 const initialMockApplications: Application[] = [
-  { id: '1', userId: MOCK_USER_ID, companyName: 'Tech Solutions A.Ş.', position: 'Frontend Geliştirici', applicationDate: '2024-05-01', recruiterEmail: 'hr@techsolutions.com', notes: 'React ve TypeScript deneyimi vurgulandı.', status: 'BASVURULDU', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: '2', userId: MOCK_USER_ID, companyName: 'Innovatech Ltd.', position: 'Backend Geliştirici', applicationDate: '2024-04-15', status: 'MULAKAT_YAPILDI', notes: 'İlk mülakat olumlu geçti, teknik mülakat bekleniyor.', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: '3', userId: MOCK_USER_ID, companyName: 'CyberSoft', position: 'Full Stack Geliştirici', applicationDate: '2024-05-10', recruiterEmail: 'kariyer@cybersoft.com.tr', status: 'TEKLIF_ALINDI', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: '4', userId: MOCK_USER_ID, companyName: 'Data Dynamics', position: 'Veri Bilimci', applicationDate: '2024-03-20', status: 'REDDEDILDI', notes: 'Pozisyon için daha deneyimli bir aday tercih edildi.', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+  { id: '1', userId: MOCK_USER_ID, companyName: 'Tech Solutions A.Ş.', position: 'Frontend Geliştirici', applicationDate: '2024-05-01', recruiterEmail: 'hr@techsolutions.com', notes: 'React ve TypeScript deneyimi vurgulandı.', status: 'BASVURULDU', createdAt: '2024-05-15T10:00:00.000Z', updatedAt: new Date().toISOString() },
+  { id: '2', userId: MOCK_USER_ID, companyName: 'Innovatech Ltd.', position: 'Backend Geliştirici', applicationDate: '2024-04-15', status: 'MULAKAT_YAPILDI', notes: 'İlk mülakat olumlu geçti, teknik mülakat bekleniyor.', createdAt: '2024-05-14T10:00:00.000Z', updatedAt: new Date().toISOString() },
+  { id: '3', userId: MOCK_USER_ID, companyName: 'CyberSoft', position: 'Full Stack Geliştirici', applicationDate: '2024-05-10', recruiterEmail: 'kariyer@cybersoft.com.tr', status: 'TEKLIF_ALINDI', createdAt: '2024-05-16T10:00:00.000Z', updatedAt: new Date().toISOString() },
+  { id: '4', userId: MOCK_USER_ID, companyName: 'Data Dynamics', position: 'Veri Bilimci', applicationDate: '2024-03-20', status: 'REDDEDILDI', notes: 'Pozisyon için daha deneyimli bir aday tercih edildi.', createdAt: '2024-05-13T10:00:00.000Z', updatedAt: new Date().toISOString() },
 ];
 
 
@@ -40,12 +40,21 @@ export default function DashboardPage() {
   useEffect(() => {
     // Simulate fetching data
     const storedApps = localStorage.getItem('unghostApplications');
+    let applicationsData: Application[] = [];
     if (storedApps) {
-      setApplications(JSON.parse(storedApps));
+      applicationsData = JSON.parse(storedApps);
     } else {
-      setApplications(initialMockApplications);
+      applicationsData = initialMockApplications;
       localStorage.setItem('unghostApplications', JSON.stringify(initialMockApplications));
     }
+
+    // Sort applications by createdAt in descending order
+    const sortedApplications = applicationsData.sort((a, b) => {
+      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    });
+
+    setApplications(sortedApplications);
+
   }, []);
 
   const handleDeleteApplication = (id: string) => {
